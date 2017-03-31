@@ -11,12 +11,12 @@
   challenge
   BTH
 ped.dat !skip 1 !ALPHA !MAKE
-famly_mean.dat
-mean_SR !WT No_obs ~ mu  weight batch challenge !r sire and(dam,1) fac(sire,dam)
-Residual units
+BTH.dat
+BTH  ~ tank.batch weight batch challenge !r individual fac(sire,dam)
+
 VPREDICT !DEFINE
-F VARA sire4
+F VARA individual
 F VARC fac(sire,dam)
-F VARP VARC + VARA0.5+Residual
+F VARP VARC + VARA+Residual
 H h2 VARA VARP
 H C2 VARC VARP
