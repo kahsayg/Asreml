@@ -1,0 +1,22 @@
+# Univariate Animal model
+  individual !A!P
+  sire !A!P
+  dam !A!P
+  weight
+  tank
+  batch
+  mean_SR
+  No_obs!I
+  weight
+  challenge
+  BTH
+ped.dat !skip 1 !ALPHA !MAKE
+famly_mean.dat
+mean_SR !WT No_obs ~ mu  weight batch challenge !r sire and(dam,1) fac(sire,dam)
+Residual units
+VPREDICT !DEFINE
+F VARA sire4
+F VARC fac(sire,dam)
+F VARP VARC + VARA0.5+Residual
+H h2 VARA VARP
+H C2 VARC VARP
