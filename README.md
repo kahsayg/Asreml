@@ -1,1 +1,1 @@
- #THESE ARE ASREML script files mostly used
+ #ASREML script files 
